@@ -2,47 +2,53 @@ import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { ScrollView } from 'react-native';
 
 type MenuItem = {
     label: string;
     icon: keyof typeof MaterialCommunityIcons.glyphMap;
+    name: string;
 };
 
 const menuItems: MenuItem[] = [
-    { label: 'Agenda', icon: 'calendar-month' },
-    { label: 'Comunicados', icon: 'file-document' },
-    { label: 'Atendimentos', icon: 'account-voice' },
+    { label: 'Comunicados', icon: 'file-document', name: 'Announcement' },
+    { label: 'Notas', icon: 'calendar-month', name: 'Agenda' },
+    { label: 'Financeiro', icon: 'account-voice', name: 'asd' },
+    { label: 'Registro das Catracas', icon: 'account-voice', name: 'asd' },
 ];
 
 export const MainMenuButtons = () => {
     const navigation = useNavigation();
 
     return (
-        <View style={styles.container}>
-            {menuItems.map((item, index) => (
-                <TouchableOpacity 
-                    key={index} style={styles.button}
-                    onPress={() => navigation.navigate('Announcement')}
-                >
-                    <View style={styles.iconWrapper}>
-                        <MaterialCommunityIcons name={item.icon} size={28} color="#fff" />
-                    </View>
-                    <Text style={styles.label}>{item.label}</Text>
-                </TouchableOpacity>
-            ))}
-        </View>
+        <SafeAreaView>
+            <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.container}>
+                {menuItems.map((item, index) => (
+                    <TouchableOpacity
+                        key={index} style={styles.button}
+                        onPress={() => navigation.navigate(item.name)}
+                    >
+                        <View style={styles.iconWrapper}>
+                            <MaterialCommunityIcons name={item.icon} size={28} color="#fff" />
+                        </View>
+                        <Text style={styles.label}>{item.label}</Text>
+                    </TouchableOpacity>
+                ))}
+            </ScrollView>
+        </SafeAreaView>
     );
 };
 
 const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
-        justifyContent: 'space-between',
-        marginVertical: 12,
+        paddingHorizontal: 12,
     },
     button: {
         alignItems: 'center',
-        width: '30%',
+        marginRight: 16,
+        width: 90, // ou outro valor fixo que se adapte bem ao layout
     },
     iconWrapper: {
         backgroundColor: '#00bcd4',

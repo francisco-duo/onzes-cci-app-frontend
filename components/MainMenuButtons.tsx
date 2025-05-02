@@ -13,8 +13,8 @@ type MenuItem = {
 
 const menuItems: MenuItem[] = [
     { label: 'Comunicados', icon: 'file-document', name: 'Announcement' },
-    { label: 'Notas', icon: 'calendar-month', name: 'Agenda' },
-    { label: 'Financeiro', icon: 'account-voice', name: 'asd' },
+    { label: 'Notas', icon: 'calendar-month', name: 'SchoolCard' },
+    { label: 'Financeiro', icon: 'account-voice', name: 'Financial' },
     { label: 'Registro das Catracas', icon: 'account-voice', name: 'asd' },
 ];
 
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
         width: 90, // ou outro valor fixo que se adapte bem ao layout
     },
     iconWrapper: {
-        backgroundColor: '#00bcd4',
+        backgroundColor: '#000080',
         padding: 14,
         borderRadius: 16,
         marginBottom: 6,

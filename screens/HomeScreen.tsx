@@ -4,7 +4,6 @@ import { ScrollView, StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { UserHeader } from '../components/UserHeader';
-import { IllustrationBanner } from '../components/IllustrationBanner';
 import { MainMenuButtons } from '../components/MainMenuButtons';
 import { SectionTitle } from '../components/SectionTitle';
 import { SectionError } from '../components/SectionError';

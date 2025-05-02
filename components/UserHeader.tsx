@@ -12,14 +12,14 @@ export const UserHeader = () => {
             >
                 <View style={styles.container}>
                     <Image
-                        source={require('../assets/icon.png')}
+                        source={require('../assets/user-profile.jpeg')}
                         style={styles.avatar}
                     />
                     <View style={styles.textContainer}>
                         <Text style={styles.greeting}>Olá, Francisco!</Text>
                         <View style={styles.roleRow}>
                             <Text style={styles.role}>Sup-CCI</Text>
-                            <Ionicons name="chevron-down" size={16} color="#000" />
+                            <Ionicons name="chevron-down" size={16} color="#fff" />
                         </View>
                     </View>
                 </View>
@@ -33,15 +33,15 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     image: {
-        height: 150,
+        height: 200,
         flex: 1,
         justifyContent: 'center',
-        paddingInline: 10
+        paddingInline: 10,
     },
     avatar: {
-        width: 48,
-        height: 100,
-        borderRadius: 24,
+        width: 60,
+        height: 60,
+        borderRadius: 100,
         backgroundColor: '#ddd',
         marginRight: 12,
     },
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     },
     role: {
         fontSize: 14,
-        color: '#666',
+        color: '#fff',
         marginRight: 4,
     },
 });
